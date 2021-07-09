@@ -1,5 +1,7 @@
 - hosts: all
   become: yes
+  vars_files:
+    - group_vars/webservers.yml
   tasks:
     - name: install pip
       become: yes
@@ -18,3 +20,9 @@
         image: redmine
         ports:
           - "8080:3000"
+        env:
+          REDMINE_DB_POSTGRES: "{{ postgres_host }}"
+          REDMINE_DB_PORT: "{{ postgres_port }}"
+          REDMINE_DB_USERNAME: "{{ postgres_user }}"
+          REDMINE_DB_PASSWORD: "{{ postgres_pass }}"
+          REDMINE_DB_DATABASE: "{{ postgres_db }}"
