@@ -1,10 +1,6 @@
 ---
-- import_playbook: monitoring.yml
-
 - hosts: all
   become: yes
-  vars_files:
-    - group_vars/database/postgres.yml
   tasks:
     - name: install pip
       become: yes

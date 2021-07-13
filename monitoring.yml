@@ -1,8 +1,6 @@
-- hosts: webservers
+- hosts: all
   roles:
     - { role: datadog.datadog, become: yes }
-  vars_files:
-    - group_vars/monitoring/datadog.yml
   vars:
     datadog_api_key: "{{ datadog_api_key }}"
     datadog_site: "datadoghq.com"
