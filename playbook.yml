@@ -1,20 +1,10 @@
+---
+- import_playbook: monitoring.yml
+
 - hosts: all
   become: yes
-  roles:
-    - datadog.datadog
   vars_files:
-    - group_vars/webservers.yml
-  vars:
-    datadog_api_key: "{{ datadog_api_key }}"
-    datadog_site: "datadoghq.com"
-    datadog_checks:
-      http_check:
-        init_config:
-        instances:
-          - name: application health check status
-            url: http://localhost:8080
-            timeout: 5
-            method: GET
+    - group_vars/database/postgres.yml
   tasks:
     - name: install pip
       become: yes
