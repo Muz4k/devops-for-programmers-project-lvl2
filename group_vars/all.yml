@@ -3,4 +3,4 @@ postgres_host: meow
 postgres_port: "1234"
 postgres_user: meow
 postgres_pass: meow
-datadog_api_key: meow1
+datadog_api_key: meow
