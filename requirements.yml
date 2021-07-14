@@ -4,4 +4,3 @@ roles:
     version: 4.10.0
 collections:
   - name: community.docker
-    version: 1.8.0
