@@ -3,7 +3,6 @@
   become: yes
   tasks:
     - name: install pip
-      become: yes
       apt:
         name: python3-pip
         state: present
