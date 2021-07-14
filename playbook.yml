@@ -1,4 +1,6 @@
 ---
+- import_playbook: monitoring.yml
+
 - hosts: all
   become: yes
   tasks:
