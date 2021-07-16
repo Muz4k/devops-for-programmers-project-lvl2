@@ -1,0 +1,6 @@
+redmine_port: 8080
+postgres_db: defaultdb
+postgres_host: meow
+postgres_port: "1234"
+postgres_user: meow
+postgres_pass: meow

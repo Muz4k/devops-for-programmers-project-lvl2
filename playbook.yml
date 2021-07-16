@@ -1,10 +1,11 @@
 ---
 - hosts: all
-  become: yes
   roles:
-    - datadog.datadog
+    - { role: datadog.datadog, become: yes }
+    - redmine_server
   tasks:
     - name: install pip
+      become: yes
       apt:
         name: python3-pip
         state: present
@@ -13,16 +14,3 @@
     - name: install docker-dependency
       pip:
         name: docker
-
-    - name: start container
-      docker_container:
-        name: redmine-example-app
-        image: redmine
-        ports:
-          - "8080:3000"
-        env:
-          REDMINE_DB_POSTGRES: "{{ postgres_host }}"
-          REDMINE_DB_PORT: "{{ postgres_port }}"
-          REDMINE_DB_USERNAME: "{{ postgres_user }}"
-          REDMINE_DB_PASSWORD: "{{ postgres_pass }}"
-          REDMINE_DB_DATABASE: "{{ postgres_db }}"
