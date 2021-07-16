@@ -11,8 +11,8 @@
 make add-requirements
 ```
 
-### Храни пароль от ansible vault в ~/.ansible_pass.txt, это поможет тебе 
- ###* шифровать переменные
+### Храни пароль от ansible vault в ```~/.ansible_pass.txt``` , это поможет тебе 
+ ### * шифровать переменные
 ```
 make encrypt-string secret_value='foo' secret_name='bar'
 ```
@@ -24,9 +24,10 @@ make show-encrypted-string secret_name=postgres_host path_to_file=group_vars/web
 
 ## И ты даже сможешь
 
-### деплоить приложение на любое количество серверов (прописанных в ./inventory.ini)
+### деплоить приложение на любое количество серверов
+### (прописанных в ./inventory.ini)
 ```
 make start-playbook
 ```
 
-## А если освоишь балансеры в Digital Ocean, спрячешь их под один домен и создашь свой собственный [клуб](https://project.gitpushforce.club/)!
+## А если освоишь балансеры в Digital Ocean - спрячешь их под один домен и создашь свой собственный [клуб](https://project.gitpushforce.club/)!
