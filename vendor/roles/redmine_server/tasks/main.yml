@@ -2,7 +2,7 @@
 - name: start container
   docker_container:
     name: redmine-example-app
-    image: redmine
+    image: redmine:4.2
     ports:
       - "{{ redmine_port }}:3000"
     env:
