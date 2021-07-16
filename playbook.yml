@@ -1,8 +1,9 @@
 ---
 - hosts: all
   roles:
-    - { role: datadog.datadog, become: yes }
-    - redmine_server
+    - role: datadog.datadog
+      become: yes
+    - role: redmine_server
   tasks:
     - name: install pip
       become: yes
