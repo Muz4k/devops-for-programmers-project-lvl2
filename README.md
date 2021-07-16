@@ -6,3 +6,8 @@
 ```
 make encrypt-string secret_value='foo' secret_name='bar'
 ```
+
+### view encrypt string example
+```
+make show-encrypted-string secret_name=postgres_host path_to_file=group_vars/webservers.yml
+```
